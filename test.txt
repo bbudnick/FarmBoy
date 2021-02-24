@@ -1,4 +1,0 @@
-commit test
-another commit test
-
-from Jessica! git appears to be working as we expect!
