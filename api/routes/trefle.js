@@ -18,10 +18,20 @@ let fetchPlants = async () => {
       headers: { "Content-Type": "application/json" },
     });
     const json = await response.json();
-    console.log(json);
+    fetchAllPlants("https://trefle.io/api/v1/plants?token=" + json.token);
+    console.log(json.token, "is the current token");
   } catch (error) {
     console.log("Request failed", error);
   }
 };
 
-fetchPlants(urlPlants);
+let fetchAllPlants = async (url) => {
+    try {
+        console.log("You did it!");
+    }
+    catch(error) {
+        console.log('Request failed', error);
+    }
+}
+
+fetchPlants();
