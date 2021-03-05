@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Navigation, Footer, Home, About, Contact } from "./components";
 
 class App extends Component {
   constructor(props) {
@@ -21,15 +22,26 @@ class App extends Component {
 
   render() {
     return (
-      <div className= "App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">WHAT'S UP PLANTY PEOPLE</h1>
-        </header>
+      <div className= "App">    
+      <div className="App">
+        <Router>
+          <Navigation />
+            <Switch>
+              <Route path="/" exact component={() => <Home />} />
+              <Route path="/about" exact component={() => <About />} />
+              <Route path="/contact" exact component={() => <Contact />} />
+            </Switch>
+            <Footer />
+        </Router>
+      </div>
+        <h1 className="App-title">WHAT'S UP PLANTY PEOPLE</h1>
+    
         <p className="App-intro">{this.state.apiResponse}</p>
       </div>
     );
   }
 }
+
+
 
 export default App;
