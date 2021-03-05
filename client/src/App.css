@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+
+.topnav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 20px 0px;
+  padding: auto;
+}
+
+li {
+  float: left;
+  margin: 10px 20px;
+  padding: 10px 50px;
+
+}
+
+/* screens less than 600px wide ...make links vertical stack*/
+@media screen and (max-width: 600px) {
+  .topnav a{
+      float: none; 
+      width: 100%;
+  }
+}
