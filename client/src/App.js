@@ -24,6 +24,7 @@ class App extends Component {
     return (
       <div className= "App">    
       <div className="App">
+      <h1 className="App-title">WHAT'S UP PLANTY PEOPLE</h1>
         <Router>
           <Navigation />
             <Switch>
@@ -34,7 +35,7 @@ class App extends Component {
             <Footer />
         </Router>
       </div>
-        <h1 className="App-title">WHAT'S UP PLANTY PEOPLE</h1>
+        
     
         <p className="App-intro">{this.state.apiResponse}</p>
       </div>
