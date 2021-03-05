@@ -1,4 +1,4 @@
-//This gets the tokena and expiration date and time from the trefle website
+//This gets the tokens and expiration date and time from the trefle website
 
 const fetch = require("node-fetch");
 
@@ -26,12 +26,13 @@ let fetchPlants = async () => {
 };
 
 let fetchAllPlants = async (url) => {
-    try {
-        console.log("You did it!");
-    }
-    catch(error) {
-        console.log('Request failed', error);
-    }
-}
+  try {
+    let response = await fetch(url)
+    let plantData = await response.json();
+    console.log(plantData);
+  } catch (error) {
+    console.log("Request failed", error);
+  }
+};
 
 fetchPlants();
