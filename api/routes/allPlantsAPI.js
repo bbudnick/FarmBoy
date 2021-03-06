@@ -21,9 +21,7 @@ router.get("/", function (req, res, next) {
         headers: { "Content-Type": "application/json" },
       });
       const json = await response.json();
-      let planties = fetchAllPlants(
-        "https://trefle.io/api/v1/plants?token=" + json.token
-      );
+      fetchAllPlants("https://trefle.io/api/v1/plants?token=" + json.token);
     } catch (error) {
       console.log("Request failed", error);
     }
@@ -33,14 +31,11 @@ router.get("/", function (req, res, next) {
     try {
       let response = await fetch(url);
       let plantData = await response.json();
-      let stringyPlant = JSON.stringify(plantData);
-      res.send(stringyPlant);
+      res.send(plantData);
     } catch (error) {
       console.log("Request failed", error);
     }
   };
-
-
 
   fetchPlants();
 });
