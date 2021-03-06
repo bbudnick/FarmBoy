@@ -6,10 +6,16 @@ const Forecast = () => {
   let [city, setCity] = useState("");
   let [unit, setUnit] = useState("imperial"); //default initial temperature unit
   const uriEncodedCity = encodeURIComponent(city);
+  let [error, setError] = useState(false);
+  let [loading, setLoading] = useState(false);
   let [responseObj, setResponseObj] = useState({});
   function getForecast(e) {
     //keeps event state
     e.preventDefault();
+    if(city.length === 0) {
+        return setError(true);
+    }
+
     fetch(
       `https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`,
       {
@@ -23,7 +29,15 @@ const Forecast = () => {
     )
       .then((response) => response.json())
       .then((response) => {
+          if(response.cod !== 200) {
+              throw new Error()
+          }
         setResponseObj(response);
+        setLoading(false);
+      }).catch (err => {
+          setError(true);
+          setLoading(false);
+          console.log(err.message);
       });
   }
   return (
@@ -60,7 +74,11 @@ const Forecast = () => {
         </label>
         <button className={classes.Button} type="submit">Get Forecast</button>
       </form>
-      <Conditions responseObj={responseObj} />
+      <Conditions 
+        responseObj={responseObj} 
+        error={error}
+        loading={loading} 
+        />
     </div>
   );
 };
