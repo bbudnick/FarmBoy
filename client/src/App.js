@@ -15,6 +15,7 @@ class App extends Component {
     .catch(err => err);
   }
 
+  //for HTTP requests
   componentDidMount() {
     this.callAPI();
   }
@@ -26,6 +27,26 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">WHAT'S UP PLANTY PEOPLE</h1>
         </header>
+        <table>
+                <thead>
+                    <tr>
+                        <th>Common Name</th>
+                        <th>Scientific Name</th>
+                        <th>Genus</th>
+                        <th>Family</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.props.data && this.props.data.map(data => {
+                        return <tr>
+                            <td>{data.common_name}</td>
+                            <td>{data.scientific_name}</td>
+                            <td>{data.genus}</td>
+                            <td>{data.family}</td>
+                        </tr>
+                    })}
+                </tbody>
+            </table>
         <p className="App-intro">{this.state.apiResponse}</p>
       </div>
     );
