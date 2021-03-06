@@ -1,39 +1,19 @@
-import React, { Component } from "react";
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Forecast from "./components/Forecast/Forecast";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: ""};
-  }
-
-  callAPI() {
-    fetch("http://localhost:9000/allPlantsAPI")
-    .then(res => res.text())
-    .then(res => this.setState({ apiResponse: res }))
-    .catch(err => err);
-  }
-
-  //for HTTP requests
-  componentDidMount() {
-    this.callAPI();
-  }
-
-  render() {
-    return (
-      <div className= "App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">WHAT'S UP PLANTY PEOPLE</h1>
-        </header>
-
-
-
-        <p className="App-intro">{this.state.apiResponse}</p>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>React Weather App</h1>
+      </header>
+      <main>
+        <Forecast />
+      </main>
+      <footer>Page created by yournamehere</footer>
+    </div>
+  );
 }
 
 export default App;
