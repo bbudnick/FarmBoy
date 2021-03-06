@@ -2,13 +2,13 @@
 import React from "react";
 
 /* Structure of function */
-function Home() {
+function BackyardHabitat() {
 	return(
-        <div className="home">
+        <div className="backyardHabitat">
 
         </div>
     )
 }
 
 /* always ends with */
-export  default Home;
+export  default BackyardHabitat;
