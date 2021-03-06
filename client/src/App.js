@@ -3,7 +3,7 @@ import './App.css';
 /* to define router from the react-router-dom installed */
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 /* where to find pages routes go to */
-import { Navigation, Footer, Home, Native}
+import { Navigation, Footer, Home, NativePlants, Weather, BackyardHabitat, Purpose, ContactUs} from "./components"
 
 class App extends Component {
   constructor(props) {
