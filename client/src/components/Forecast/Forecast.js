@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Conditions from "../displays/Conditions/Conditions";
 
 const Forecast = () => {
   let [responseObj, setResponseObj] = useState({});
@@ -22,8 +23,10 @@ const Forecast = () => {
   return (
     <div>
       <h2>Find Current Weather Conditions</h2>
-      <div>{JSON.stringify(responseObj)}</div>
       <button onClick={getForecast}>Get Forecast</button>
+      <Conditions
+        responseObj={responseObj}
+        />
     </div>
   );
 };
