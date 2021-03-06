@@ -2,13 +2,13 @@
 import React from "react";
 
 /* Structure of function */
-function ContactUs() {
+function Navigation() {
 	return(
-        <div className="contactUs">
-
+        <div className="navigation">
+            <p>Navigation</p>
         </div>
     )
 }
 
 /* always ends with */
-export  default ContactUs;
+export  default Navigation;

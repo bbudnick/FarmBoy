@@ -2,13 +2,13 @@
 import React from "react";
 
 /* Structure of function */
-function Purpose() {
+function Weather() {
 	return(
-        <div className="purpose">
-
+        <div className="weather">
+            <p>"Weather"</p>
         </div>
     )
 }
 
 /* always ends with */
-export  default Purpose;
+export  default Weather;

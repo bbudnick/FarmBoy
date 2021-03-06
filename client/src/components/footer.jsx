@@ -2,13 +2,13 @@
 import React from "react";
 
 /* Structure of function */
-function Navigation() {
+function Footer() {
 	return(
-        <div className="navigation">
-
+        <div className="contactUs">
+            <p>Footer</p>
         </div>
     )
 }
 
 /* always ends with */
-export  default Navigation;
+export  default Footer;

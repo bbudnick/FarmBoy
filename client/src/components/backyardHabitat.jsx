@@ -2,13 +2,13 @@
 import React from "react";
 
 /* Structure of function */
-function Footer() {
+function BackyardHabitat() {
 	return(
-        <div className="footer">
-            <p>Plants for Planet!</p>
+        <div className="backyardHabitat">
+            <p>Backyard Habitat</p>
         </div>
     )
 }
 
 /* always ends with */
-export  default Footer;
+export  default BackyardHabitat;

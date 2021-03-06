@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import './App.css';
 /* to define router from the react-router-dom installed */
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 /* where to find pages routes go to */
-import { Navigation, Footer, Home, NativePlants, Weather, BackyardHabitat, Purpose, ContactUs} from "./components"
+import { Navigation, Footer, Home, NativePlants, Weather, BackyardHabitat, Purpose, ContactUs} from "./components";
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +20,7 @@ class App extends Component {
 
   componentDidMount() {
     this.callAPI();
+
   }
 
   render() {
@@ -32,22 +33,23 @@ class App extends Component {
         <Router>
             <Navigation />
                <Switch> 
-                  <Route path = "/" exact component {() => <Home />} />
-                  <Route path = "/Native Plants" exact component {() => <HNative Plants />} />
-                  <Route path = "/Backyard Habitat" exact component {() => <Backyard Habitat />} />
-                  <Route path = "/Weather" exact component {() => <Weather/>} />
-                  <Route path = "/Purpose" exact component {() => <Purpose />} />
-                  <Route path = "/Contact" exact component {() => <Contact />} />
-                  <Route path = "/Weather" exact component {() => <Weather/>} />
+                  <Route path="/" exact component={() => <Home />} />
+                  <Route path = "/Native Plants" exact component={() => <NativePlants />} />
+                  <Route path = "/Backyard Habitat" exact component={() => <BackyardHabitat />} />
+                  <Route path = "/Weather" exact component={() => <Weather/>} />
+                  <Route path = "/Purpose" exact component={() => <Purpose />} />
+                  <Route path = "/Contact" exact component={() => <ContactUs />} />
+                  <Route path = "/Weather" exact component={() => <Weather/>} />
+                  <Route path = "/Footer" exact component={() => <Footer/>} />
                </Switch>
+               <Footer />
         </Router>
       </div>
         <p className="App-intro">{this.state.apiResponse}</p>
       </div>
     );
   }
+
 }
-
-
 
 export default App;

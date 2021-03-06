@@ -2,13 +2,13 @@
 import React from "react";
 
 /* Structure of function */
-function Weather() {
+function NativePlants() {
 	return(
-        <div className="weather">
-
+        <div className="nativePlants">
+            <p>"Native Plants"</p>
         </div>
     )
 }
 
 /* always ends with */
-export  default Weather;
+export  default NativePlants;

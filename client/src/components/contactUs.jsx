@@ -2,13 +2,13 @@
 import React from "react";
 
 /* Structure of function */
-function NativePlants() {
+function ContactUs() {
 	return(
-        <div className="nativePlants">
-
+        <div className="contactUs">
+            <p>Contact Us</p>
         </div>
     )
 }
 
 /* always ends with */
-export  default NativePlants;
+export  default ContactUs;
