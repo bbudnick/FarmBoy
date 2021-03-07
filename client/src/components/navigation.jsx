@@ -7,8 +7,8 @@ import { Link, withRouter } from "react-router-dom";
 function Navigation(props) {
     return(
         <div className="navigation">
-            <nav class="navbar navbar-expand navbar-dark bg-dark">
-                <div class="container">
+            <div class="container">
+                <nav class="navbar navbar-expand navbar-dark bg-dark">
                     <div>
                         <ul class="navbar-nav ml-auto">
                             {/*list item One*/}
@@ -45,8 +45,8 @@ function Navigation(props) {
                             </li>
                         </ul>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
         </div>
     );
 }

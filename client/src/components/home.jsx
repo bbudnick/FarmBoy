@@ -7,8 +7,8 @@ function home() {
         <div className="home">
             <div class="flex-container">
                 <img
-                    src="https://placekitten.com/300/200"
-                    alt="kitten"
+                    src="http://placeimg.com/400/200/nature"
+                    alt="nature"
                 />
                 <h1>Home</h1>
             </div>

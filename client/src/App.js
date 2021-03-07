@@ -27,6 +27,7 @@ class App extends Component {
     return (
       <div className= "App">    
         <h1 className="App-title">WHAT'S UP PLANTY PEOPLE</h1>
+        <div>
         <Router>
           <Navigation />
           <Switch> 
@@ -37,6 +38,7 @@ class App extends Component {
           </Switch>
           <Footer />
         </Router>
+        </div>
         <p className="App-intro">{this.state.apiResponse}</p>
       </div>
     );

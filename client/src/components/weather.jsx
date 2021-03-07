@@ -7,7 +7,7 @@ function Weather() {
         <div className="weather">
             <div class="flex-container">
                 <img
-                    src="https://placekitten.com/400/200"
+                    src="http://placeimg.com/450/200/nature"
                     alt="kitten"
                 />
                 <h1>Weather</h1>
