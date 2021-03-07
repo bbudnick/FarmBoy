@@ -3,7 +3,7 @@ import './App.css';
 /* to define router from the react-router-dom installed */
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 /* where to find pages routes go to */
-import { Navigation, Footer, Home, Nativeplants, Weather, Backyardhabitat, Purpose, Contactus} from "./components";
+import {Navigation, Footer, Home, Nativeplants, Weather} from "./components";
 
 class App extends Component {
   constructor(props) {
@@ -30,14 +30,10 @@ class App extends Component {
         <Router>
           <Navigation />
           <Switch> 
-            <Route path="/" exact component={() => <Home />} />
-            <Route path = "/Native Plants" exact component={() => <Nativeplants />} />
-            <Route path = "/Backyard Habitat" exact component={() => <Backyardhabitat />} />
-            <Route path = "/Weather" exact component={() => <Weather/>} />
-            <Route path = "/Purpose" exact component={() => <Purpose />} />
-            <Route path = "/Contact" exact component={() => <Contactus />} />
-            <Route path = "/Weather" exact component={() => <Weather/>} />
-            <Route path = "/Footer" exact component={() => <Footer/>} />
+            <Route path = "/" exact component={() => <Home />} />
+            <Route path = "/nativeplants" exact component={() => <Nativeplants />} />
+            <Route path = "/weather" exact component={() => <Weather/>} />
+            <Route path = "/footer" exact component={() => <Footer/>} />
           </Switch>
           <Footer />
         </Router>

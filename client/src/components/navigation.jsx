@@ -25,10 +25,10 @@ function Navigation(props) {
                             {/*list item Two*/}
                             <li
                                 class={`nav-item ${
-                                    props.location.pathname ==="/nativeplants" ? "active" : ""
+                                    props.location.pathname ==="/Nativeplants" ? "active" : ""
                                 }`}
                             >
-                                <Link class="nav-link" to="/nativeplants">
+                                <Link class="nav-link" to="Nativeplants">
                                     Native Plants
                                     <span class="sr-only"></span>
                                 </Link>
@@ -36,11 +36,11 @@ function Navigation(props) {
                              {/*list item Two*/}
                              <li
                                 class={`nav-item ${
-                                    props.location.pathname ==="/backyardhabitat" ? "active" : ""
+                                    props.location.pathname ==="/Weather" ? "active" : ""
                                 }`}
                             >
-                                <Link class="nav-link" to="/backyardhabitat">
-                                    Backyard Habitat
+                                <Link class="nav-link" to="/Weather">
+                                    Weather
                                 </Link>
                             </li>
                         </ul>

@@ -7,14 +7,14 @@ function NativePlants() {
         <div className="home">
             <div class="flex-container">
                 <img
-                    src="https://placekitten.com/300/200"
+                    src="https://placekitten.com/500/400"
                     alt="kitten"
                 />
-                <h1>Home</h1>
+                <h1>Native Plants</h1>
             </div>
         </div>    
     )
 }
 
 /* always ends with */
-export  default NativePlants;
+export default NativePlants;
