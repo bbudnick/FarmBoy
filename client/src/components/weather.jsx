@@ -8,7 +8,7 @@ function Weather() {
             <div class="flex-container">
                 <img
                     src="http://placeimg.com/1900/610/nature"
-                    alt="kitten"
+                    alt="nature"
                 />
                 <h1>Weather</h1>
             </div>
@@ -17,4 +17,4 @@ function Weather() {
 }
 
 /* always ends with */
-export  default Weather
+export default Weather
