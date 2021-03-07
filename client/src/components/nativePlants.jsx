@@ -4,9 +4,15 @@ import React from "react";
 /* Structure of function */
 function NativePlants() {
 	return(
-        <div className="nativePlants">
-            <p>"Native Plants"</p>
-        </div>
+        <div className="home">
+            <div class="flex-container">
+                <img
+                    src="https://placekitten.com/300/200"
+                    alt="kitten"
+                />
+                <h1>Home</h1>
+            </div>
+        </div>    
     )
 }
 

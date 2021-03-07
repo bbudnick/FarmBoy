@@ -2,13 +2,13 @@
 import React from "react";
 
 /* Structure of function */
-function Footer() {
+function footer() {
 	return(
-        <div className="contactUs">
-            <p>Footer</p>
-        </div>
-    )
+        <footer>
+            <p>Plants for Planet</p>
+        </footer>
+    );
 }
 
 /* always ends with */
-export  default Footer;
+export default footer;

@@ -2,13 +2,19 @@
 import React from "react";
 
 /* Structure of function */
-function Home() {
+function home() {
 	return(
         <div className="home">
-            <p>Home</p>
-        </div>
-    )
+            <div class="flex-container">
+                <img
+                    src="https://placekitten.com/300/200"
+                    alt="kitten"
+                />
+                <h1>Home</h1>
+            </div>
+        </div>    
+    );
 }
 
 /* always ends with */
-export  default Home;
+export default home
