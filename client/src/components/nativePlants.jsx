@@ -25,7 +25,7 @@ function NativePlants() {
                 </select>
                 </form>
                 <img
-                    src="http://placeimg.com/600/50cd0/nature"
+                    src="http://placeimg.com/600/500/nature"
                     alt="nature"
                 />
                 <h1>Native Plants</h1>

@@ -5,7 +5,7 @@ import React from "react";
 function footer() {
 	return(
         <footer>
-            <p>Plants for Planet</p>
+            <p>WHAT'S UP PLANTY PEOPLE</p>
         </footer>
     );
 }

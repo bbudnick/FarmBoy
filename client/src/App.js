@@ -26,7 +26,6 @@ class App extends Component {
   render() {
     return (
       <div className= "App">    
-        <h1 className="App-title">WHAT'S UP PLANTY PEOPLE</h1>
         <div>
         <Router>
           <Navigation />
