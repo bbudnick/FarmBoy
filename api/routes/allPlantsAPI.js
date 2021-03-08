@@ -31,7 +31,8 @@ router.get("/", function (req, res, next) {
     try {
       let response = await fetch(url);
       let plantData = await response.json();
-      res.send(plantData);
+      let stringyPlant = JSON.stringify(plantData);
+      res.send(stringyPlant);
     } catch (error) {
       console.log("Request failed", error);
     }

@@ -1,32 +1,32 @@
 const express = require("express");
-const fetch = require("node-fetch");
 var router = express.Router();
 
 router.get("/", function (req, res, next) {
-  //utilizes Open Weather to get forecast
-  
-  const urlWeather =
-    "https://api.weather.gov/points/";
+  var unirest = require("unirest");
 
-  let fetchWeather = async () => {
-    try {
-      let response = await fetch(urlWeather + "{45.51200538206223}," + "{-122.68376418719278}")
-      const json = await response.json();
-      secondFetchWeather(json.properties.forecast);
-      console.log("effective")
-    } catch (error) {
-      console.log("Request failed", error);
-    }
-  };
+  var req = unirest(
+    "GET",
+    "https://community-open-weather-map.p.rapidapi.com/weather"
+  );
 
-  let secondFetchWeather = async (url) => {
-    try{
-      let response = await fetch(url);
-      let weatherData = await response.json();
-      res.send(weatherData);
-    } catch (error) {
-      console.log("Request failed", error);
-    }
-  }
-  fetchWeather();
+  req.query({
+    q: "Portland",
+    id: "2172797",
+    units: '"metric" or "imperial"',
+    mode: "xml, html",
+  });
+
+  req.headers({
+    "x-rapidapi-key": "03d14b788emsh832efa191bf65f6p12da52jsnd28990858710",
+    "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+    useQueryString: true,
+  });
+
+  req.end(function (res) {
+    if (res.error) throw new Error(res.error);
+
+    console.log(res.body);
+  });
 });
+
+module.exports = router;

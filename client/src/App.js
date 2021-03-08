@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Forecast from "./components/Forecast/Forecast";
+import Forecast from "./Forecast/Forecast";
 
 function App() {
   return (

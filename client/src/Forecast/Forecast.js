@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Conditions from "../displays/Conditions/Conditions";
+import Conditions from "../components/displays/Conditions/Conditions";
 import classes from './Forecast.module.css';
+
 
 const Forecast = () => {
   let [city, setCity] = useState("");
@@ -15,30 +16,8 @@ const Forecast = () => {
     if(city.length === 0) {
         return setError(true);
     }
+    //TODO call function in weatherAPI.js
 
-    fetch(
-      `https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`,
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-key":
-            "03d14b788emsh832efa191bf65f6p12da52jsnd28990858710",
-          "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((response) => {
-          if(response.cod !== 200) {
-              throw new Error()
-          }
-        setResponseObj(response);
-        setLoading(false);
-      }).catch (err => {
-          setError(true);
-          setLoading(false);
-          console.log(err.message);
-      });
   }
   return (
     <div>
