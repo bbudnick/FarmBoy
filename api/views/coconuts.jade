@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
+  p
+    input#btShowImage(type='button' value='Click for the Coconuts!')
+  #showData
