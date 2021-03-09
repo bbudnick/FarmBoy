@@ -11,6 +11,7 @@ var testAPIRouter = require('./routes/testAPI');
 var weatherRouter = require('./routes/weatherAPI');
 var trefleRouter = require('./routes/trefleAPI');
 var trefleCoconuts = require('./routes/trefleCoconut');
+var trefleFlowers = require('./routes/trefleFlowers');
 
 var app = express();
 
@@ -31,6 +32,8 @@ app.use('/testAPI', testAPIRouter);
 app.use('/weatherAPI', weatherRouter);
 app.use('/trefleAPI', trefleRouter);
 app.use('/trefleCoconut', trefleCoconuts);
+app.use('/trefleFlowers', trefleFlowers);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

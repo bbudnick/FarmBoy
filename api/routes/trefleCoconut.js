@@ -21,18 +21,23 @@ router.get("/", function (req, res, next) {
         headers: { "Content-Type": "application/json" },
       });
       const json = await response.json();
-      fetchAllPlants("https://trefle.io/api/v1/species/search?q=coconut&token=" + json.token);
+      fetchCoconutPlants("https://trefle.io/api/v1/species/search?q=coconut&token=" + json.token);
     } catch (error) {
       console.log("Request failed", error);
     }
   };
 
-  let fetchAllPlants = async (url) => {
+  let fetchCoconutPlants = async (url) => {
     try {
       let response = await fetch(url);
       let plantData = await response.json();
-      let stringyPlant = JSON.stringify(plantData);
-      res.send(stringyPlant);
+      console.log(plantData);
+      let finalPlant = await plantData.data.id;
+      if(!finalPlant){
+          res.send("Sorry, no plant by that ID");
+      }
+      else
+        res.send(finalPlant);
     } catch (error) {
       console.log("Request failed", error);
     }
