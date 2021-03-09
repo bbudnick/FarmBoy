@@ -3,7 +3,8 @@ var router = express.Router();
 var unirest = require("unirest");
 var app = express();
 
-app.set("view engine", "ejs");
+app.set("view engine", "jade");
+
 app.use(express.static("public"));
 
 /* GET home page. */

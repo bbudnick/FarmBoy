@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   callAPI() {
-    fetch("http://localhost:9000/testAPI")
+    fetch("http://localhost:9000/weatherAPI")
     .then(res => res.text())
     .then(res => this.setState({ apiResponse: res }))
     .catch(err => err);
@@ -27,6 +27,7 @@ class App extends Component {
           <h1 className="App-title">WHAT'S UP PLANTY PEOPLE</h1>
         </header>
         <p className="App-intro">{this.state.apiResponse}</p>
+
       </div>
     );
   }
