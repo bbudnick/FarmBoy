@@ -3,7 +3,7 @@ var router = express.Router();
 var unirest = require("unirest");
 var app = express();
 
-app.set("view engine", "jade");
+app.set("view engine", "pug");
 
 app.use(express.static("public"));
 
