@@ -1,8 +1,9 @@
 const express = require("express");
 const fetch = require("node-fetch");
 var router = express.Router();
+var app = express();
 
-router.get("/", function (req, res, next) {
+app.get("/", function (req, res, next) {
   //parameters for the POST request
   //from the trefle website, provides a token that times out and
   //assuages the CORS error
@@ -31,8 +32,7 @@ router.get("/", function (req, res, next) {
     try {
       let response = await fetch(url);
       let plantData = await response.json();
-      let stringyPlant = JSON.stringify(plantData);
-      res.send(stringyPlant);
+      console.log(plantData);
     } catch (error) {
       console.log("Request failed", error);
     }
@@ -40,5 +40,3 @@ router.get("/", function (req, res, next) {
 
   fetchPlants();
 });
-
-module.exports = router;
