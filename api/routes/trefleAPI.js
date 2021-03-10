@@ -12,6 +12,16 @@ router.get("/", function (req, res, next) {
   };
 
   const urlPlants = "https://trefle.io/api/auth/claim";
+  let fetchAllPlants = async (url) => {
+    try {
+      let response = await fetch(url);
+      let plantData = await response.json();
+      console.log(plantData);
+      res.render('trefle', {common_name: plantData.data.data.common_name})
+    } catch (error) {
+      console.log("Request failed", error);
+    }
+  };
 
   let fetchPlants = async () => {
     try {
@@ -21,19 +31,8 @@ router.get("/", function (req, res, next) {
         headers: { "Content-Type": "application/json" },
       });
       const json = await response.json();
-      fetchAllPlants("https://trefle.io/api/v1/plants?token=" + json.token);
-      console.log(json);
-    } catch (error) {
-      console.log("Request failed", error);
-    }
-  };
-
-  let fetchAllPlants = async (url) => {
-    try {
-      let response = await fetch(url);
-      let plantData = await response.json();
-      console.log(plantData);
-      res.render('trefle', {common_name: plantData.data.data.common_name})
+      const result = fetchAllPlants("https://trefle.io/api/v1/plants?token=" + json.token);
+      console.log(result);
     } catch (error) {
       console.log("Request failed", error);
     }
