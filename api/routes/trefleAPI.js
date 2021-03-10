@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 router.use(
   bodyParser.urlencoded({
-    extended: false, 
+    extended: false,
     limit: 1024,
   })
 );
@@ -24,8 +24,9 @@ router.get("/", function (req, res, next) {
     try {
       let response = await fetch(url);
       let plantData = await response.json();
+      //res.render({ plantData: plantData });
       console.log(plantData);
-      res.render('trefle', { title: 'Plant Data', common_name: 'plantData.data.common_name'});
+      res.render('trefle', { title: 'Plant Data', plants: plantData});
     } catch (error) {
       console.log("Request failed", error);
     }
@@ -39,7 +40,9 @@ router.get("/", function (req, res, next) {
         headers: { "Content-Type": "application/json" },
       });
       const json = await response.json();
-      const result = fetchAllPlants("https://trefle.io/api/v1/plants?token=" + json.token);
+      const result = fetchAllPlants(
+        "https://trefle.io/api/v1/plants?token=" + json.token
+      );
       console.log(result);
     } catch (error) {
       console.log("Request failed", error);
