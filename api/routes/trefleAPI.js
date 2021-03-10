@@ -25,9 +25,7 @@ router.get("/", function (req, res, next) {
       let response = await fetch(url);
       let plantData = await response.json();
       console.log(plantData);
-      //res.render('trefle', {common_name: 'plantData.data.common_name'});
-      res.render('layout', { title: 'struggles',
-                              plantData: plantData.data});
+      res.render('trefle', { title: 'Plant Data', common_name: 'plantData.data.common_name'});
     } catch (error) {
       console.log("Request failed", error);
     }
