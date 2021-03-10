@@ -1,6 +1,14 @@
 const express = require("express");
 const fetch = require("node-fetch");
 var router = express.Router();
+const bodyParser = require("body-parser");
+
+router.use(
+  bodyParser.urlencoded({
+    extended: false, 
+    limit: 1024,
+  })
+);
 
 router.get("/", function (req, res, next) {
   //parameters for the POST request
@@ -17,7 +25,9 @@ router.get("/", function (req, res, next) {
       let response = await fetch(url);
       let plantData = await response.json();
       console.log(plantData);
-      res.render('trefle', {common_name: plantData.data.data.common_name})
+      //res.render('trefle', {common_name: 'plantData.data.common_name'});
+      res.render('layout', { title: 'struggles',
+                              plantData: plantData.data});
     } catch (error) {
       console.log("Request failed", error);
     }
