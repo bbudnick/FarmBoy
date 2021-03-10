@@ -3,9 +3,10 @@ extends layout
 block content
     h1= title
     p Welcome to #{title}
-    p Voila the #{plants.data}
 
         ul#results
             each element in plants.data
                 li 
                     p=element.common_name
+                    p=element.scientific_name
+                    img(src=element.image_url)
