@@ -33,6 +33,7 @@ router.get("/", function (req, res, next) {
       let response = await fetch(url);
       let plantData = await response.json();
       console.log(plantData);
+      res.render('trefle', {common_name: plantData.data.data.common_name})
     } catch (error) {
       console.log("Request failed", error);
     }
