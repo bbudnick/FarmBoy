@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import $ from "jquery";
 import "./App.css";
 
 class App extends Component {
@@ -6,15 +7,23 @@ class App extends Component {
     super(props);
     this.state = { apiResponse: "" };
   }
-  callAPI() {
-    fetch("http://localhost:9000/trefleCoconut")
-      .then((res) => res.text())
-      .then((res) => this.setState({ apiResponse: res }))
-      .catch((err) => err);
-  }
 
   componentDidMount() {
-    this.callAPI();
+    this.fetch();
+  }
+
+  fetch() {
+    var context = this;
+
+    $.ajax({
+      url: "http://localhost:9000/trefleAPI",
+      method: "GET",
+      success: function (response) {
+        context.setState({
+          apiResponse: response.apiResponse,
+        });
+      },
+    });
   }
 
   render() {
@@ -22,8 +31,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Farm boy, fetch me that?</h1>
-          <p className="App">{this.state.apiResponse}</p>
         </header>
+        <p className="App-intro">Response?</p>
+        
+        <p id="plantObject">{this.state.response}</p>
       </div>
     );
   }
