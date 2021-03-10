@@ -23,6 +23,7 @@ app.get("/", function (req, res, next) {
       });
       const json = await response.json();
       fetchAllPlants("https://trefle.io/api/v1/plants?token=" + json.token);
+      console.log(json);
     } catch (error) {
       console.log("Request failed", error);
     }
