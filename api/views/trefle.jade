@@ -1,26 +1,21 @@
 extends layout
 
 block content
-    script(src='https://code.jquery.com/jquery-3.2.1.min.js'
-           integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
-           crossorigin='anonymous')
-           
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
-           integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')
-
-    h1= title
-    p Behold, the full list of #{title}
-    center
-        table(style='width:100%', border='1')
-            thead
-                tr 
-                    th Common Name 
-                    th Scientific Name 
-                    th Image 
-            tbody
-                each element in plants.data
+    section.container.border.rounded.bg-light.w-50.mx-auto.mt-5.p-3
+ 
+        h1= title
+        p Behold, the full list of #{title}
+        center
+            table(style='width:75%', border='1')
+                thead
                     tr 
-                        td #{element.common_name}
-                        td #{element.scientific_name}
-                        td(scope="row")
-                            img(src= element.image_url)
+                        th Common Name 
+                        th Scientific Name 
+                        th Image 
+                tbody
+                    each element in plants.data
+                        tr 
+                            td #{element.common_name}
+                            td #{element.scientific_name}
+                            td(scope="row")
+                                img(src= element.image_url width='100')
