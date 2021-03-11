@@ -2,26 +2,16 @@
   box-sizing: border-box;
 }
 
-:root {
-  --white: #ffffff;
-  --gray1: #333333;
-  --gray2: #555555;
-  --gray3: #cccccc;
-  --gray4: #aaaaaa;
-
-  --teal: #006060;
-  --lightteal: #008080;
-  --purple: #800080;
-  --navy: #000080;
-  --violetred: #c71585;
-  --red: #ff0000;
-  --green: #213521;
-}
 
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: var(--gray1);
+  margin: 10px; 
+  padding: 10px;
 }
-
+.table {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-evenly;
+}
 
