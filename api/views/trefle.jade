@@ -2,11 +2,18 @@ extends layout
 
 block content
     h1= title
-    p Welcome to #{title}
-
-        ul#results
-            each element in plants.data
-                li 
-                    p=element.common_name
-                    p=element.scientific_name
-                    img(src=element.image_url)
+    p Behold, the full list of #{title}
+    center
+        table(style='width:100%', border='1')
+            thead
+                tr 
+                    th Common Name 
+                    th Scientific Name 
+                    th Image 
+            tbody
+                each element in plants.data
+                    tr 
+                        td #{element.common_name}
+                        td #{element.scientific_name}
+                        td(scope="row")
+                            img(src= element.image_url)
