@@ -1,5 +1,6 @@
 # FarmBoy: A multi-purpose urban farming application 
 Winter 2021 Portland State University 
+Brita Budnick
 
 The foundation of the app is the ability to navigate through trefle.io, a plant database, and retrieve plants depending user-input factors. 
 
