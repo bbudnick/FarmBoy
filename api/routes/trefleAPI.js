@@ -25,7 +25,9 @@ router.get("/", function (req, res, next) {
     try {
       let response = await fetch(url);
       let plantData = await response.json();
+      /* renders all plants */
       res.render('trefle', { title: 'Plant Data', plants: plantData});
+      /* renders just first page of plants */
     } catch (error) {
       console.log("Request failed", error);
     }
@@ -49,6 +51,7 @@ router.get("/", function (req, res, next) {
   };
 
   fetchPlants();
+
 });
 
 module.exports = router;
