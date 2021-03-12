@@ -1,19 +1,21 @@
 extends layout
 
 block content
-    h1= title
-    p Behold, the full list of #{title}
-    center
-        table(style='width:100%', border='1')
-            thead
-                tr 
-                    th Common Name 
-                    th Scientific Name 
-                    th Image 
-            tbody
-                each element in plants.data
-                    tr 
-                        td #{element.common_name}
-                        td #{element.scientific_name}
-                        td(scope="row")
-                            img(src= element.image_url)
+ 
+    section.container.border.rounded.bg-light.w-50.mx-auto.mt-5.p-3
+        center
+            h1= title
+            p Behold, the full list of #{title}
+                table.table-striped
+                    thead
+                        tr 
+                            th Common Name 
+                            th Scientific Name 
+                            th Image 
+                    tbody
+                        each element in plants.data
+                            tr 
+                                td #{element.common_name}
+                                td #{element.scientific_name}
+                                td(scope="row")
+                                    img(src= element.image_url width='100')
