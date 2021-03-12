@@ -6,16 +6,17 @@ block content
         center
             h1= title
             p Behold, the full list of #{title}
-                table.table-striped
-                    thead
-                        tr 
-                            th Common Name 
-                            th Scientific Name 
-                            th Image 
-                    tbody
-                        each element in plants.data
+                table.table-responsive
+                    table.table-striped
+                        thead
                             tr 
-                                td #{element.common_name}
-                                td #{element.scientific_name}
-                                td(scope="row")
-                                    img(src= element.image_url width='100')
+                                th Common Name 
+                                th Scientific Name 
+                                th Image 
+                        tbody
+                            each element in plants.data
+                                tr 
+                                    td #{element.common_name}
+                                    td #{element.scientific_name}
+                                    td(scope="row")
+                                        img(src= element.image_url width='100')
