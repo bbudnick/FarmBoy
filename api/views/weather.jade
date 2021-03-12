@@ -1,0 +1,25 @@
+extends layout
+
+block content
+ 
+    section.container.border.rounded.bg-light.w-50.mx-auto.mt-5.p-3
+        center
+            h1= title
+            p Behold, the full list of #{title}
+                
+        table.table-striped
+                    thead
+                        tr 
+                            th Temperature: 
+                            th Humidity: 
+                            th Pressure: 
+                            th Description: 
+                            th Rain?
+                    tbody
+                        tr 
+                            td #{forecast.temp}
+                            td #{forecast.humidity}
+                            td #{forecast.pressure}
+                            td #{forecast.description}
+                            if (forecast.rain == 0)
+                                td #{"No rain today, garden away!"}
