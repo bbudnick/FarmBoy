@@ -49,7 +49,7 @@ router.get("/", function (req, res, next) {
     }
   };
 
-  fetchAllCoconuts();
+  fetchPlants();
 });
 
 module.exports = router;
