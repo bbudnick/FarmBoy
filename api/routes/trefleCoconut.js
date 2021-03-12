@@ -2,7 +2,7 @@ const express = require("express");
 const fetch = require("node-fetch");
 var router = express.Router();
 const bodyParser = require("body-parser");
-const jade = require('jade');
+const jade = require("jade");
 
 router.use(
   bodyParser.urlencoded({
@@ -21,11 +21,13 @@ router.get("/", function (req, res, next) {
   };
 
   const urlPlants = "https://trefle.io/api/auth/claim";
-  let fetchAllPlants = async (url) => {
+  let fetchAllCoconuts = async (url) => {
     try {
       let response = await fetch(url);
       let plantData = await response.json();
-      res.render('trefle', { title: 'Plant Data', plants: plantData});
+      /* renders all plants */
+      res.render("coconut", { title: "Coconut Data", plants: plantData });
+      /* renders just first page of plants */
     } catch (error) {
       console.log("Request failed", error);
     }
@@ -40,8 +42,8 @@ router.get("/", function (req, res, next) {
         headers: { "Content-Type": "application/json" },
       });
       const json = await response.json();
-      const result = fetchAllPlants(
-        "https://trefle.io/api/v1/plants?token=" + json.token
+      const result = fetchAllCoconuts(
+        "https://trefle.io/api/v1/species/search?q=coconut&token=" + json.token
       );
       console.log(result);
     } catch (error) {
@@ -50,7 +52,6 @@ router.get("/", function (req, res, next) {
   };
 
   fetchPlants();
-
 });
 
 module.exports = router;
