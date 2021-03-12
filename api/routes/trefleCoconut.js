@@ -51,7 +51,7 @@ router.get("/", function (req, res, next) {
     }
   };
 
-  fetchPlants();
+  fetchAllCoconuts();
 });
 
 module.exports = router;

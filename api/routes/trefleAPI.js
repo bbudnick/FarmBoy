@@ -25,6 +25,7 @@ router.get("/", function (req, res, next) {
     try {
       let response = await fetch(url);
       let plantData = await response.json();
+      jade.compile('trefle');
       res.render('trefle', { title: 'Plant Data', plants: plantData});
     } catch (error) {
       console.log("Request failed", error);
