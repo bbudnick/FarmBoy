@@ -4,7 +4,7 @@
 const express = require("express");
 var router = express.Router();
 const bodyParser = require("body-parser");
-router.use(express.static('public'));
+router.use(express.static("public"));
 
 router.use(
   bodyParser.urlencoded({

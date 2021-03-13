@@ -8,12 +8,13 @@ block content
             
             .card-body
               h1.card-title The weather in Portland today:
+              img(src='http://openweathermap.org/img/wn/' + '#{forecast.weather[0].icon}' + '.png' width='50')
               p.card-text Temperature: #{forecast.main.temp} degrees (F)
               p.card-text #{forecast.weather[0].main} with #{forecast.weather[0].description}
               p.card-text Minimum temperature:  #{forecast.main.temp_min} degrees (F)
               p.card-text High temperature: #{forecast.main.temp_max} degrees (F)
 
-              a.btn.btn-primary(href='/buildGarden') Time to plan your garden space?
+            a.btn.btn-primary(href='/buildGarden') Time to plan your garden space?
 
 
             
