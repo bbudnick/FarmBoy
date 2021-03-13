@@ -1,12 +1,17 @@
 extends layout
 
 block content
-  h1= title
 
-  nav-item.dropdown
-    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-      | Dropdown button
-    .dropdown-menu(aria-labelledby='dropdownMenuButton')
-      a.dropdown-item(href='/trefleAPI') Go to all the plants!
-      a.dropdown-item(href='/trefleCoconut') What about the coconuts?
-      a.dropdown-item(href='/weatherAPI') Is today a good day to garden in Portland?
+  .card.text-center
+    .card-header
+      ul.nav.nav-tabs.card-header-tabs
+        li.nav-item
+          a.nav-link.active(href='/trefleAPI') Go to all the plants!
+        li.nav-item
+          a.nav-link(href='trefleCoconut') What about the coconuts?
+        li.nav-item
+          a.nav-link(href='/weatherAPI') Is it a good day to garden in Portland?
+    .card-body
+      h1.card-title= title
+      p.card-text An urban farming resource with plant, weather data, and more!  
+      a.btn.btn-primary(href='/buildGarden') Plan your garden space
