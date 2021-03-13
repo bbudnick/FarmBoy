@@ -4,7 +4,16 @@ block content
  
     section.container.border.rounded.bg-light.w-70.mx-auto.mt-5.p-3
         center
-            h1= title
-                
-            p= forecast.main.temp 
+            .card(style='width: 18rem;')
+            
+            .card-body
+              h1.card-title The weather in Portland today:
+              p.card-text Temperature: #{forecast.main.temp} degrees (F)
+              p.card-text #{forecast.weather[0].main} with #{forecast.weather[0].description}
+              p.card-text Minimum temperature:  #{forecast.main.temp_min} degrees (F)
+              p.card-text High temperature: #{forecast.main.temp_max} degrees (F)
+
+              a.btn.btn-primary(href='/buildGarden') Time to plan your garden space?
+
+
             
