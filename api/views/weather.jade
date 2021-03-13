@@ -6,21 +6,5 @@ block content
         center
             h1= title
                 
-        table.table-striped.w-60.mx-auto.mt-5.p-3
-            thead 
-                tr 
-                    th(scope='col') --Temperature
-                    th(scope='col') --Humidity
-                    th(scope='col') --Pressure
-                    th(scope='col') --Description
-                    th(scope='col') --Rain?--
-            tbody
-                tr 
-                    td #{forecast.temp}
-                    td #{forecast.humidity}
-                    td #{forecast.pressure}
-                    td #{forecast.description}
-                    if (forecast.rain == 0)
-                        td #{"No rain today, garden away!"}
-                    else    
-                        td #{forecast.description}
+            p= forecast.main.temp 
+            
