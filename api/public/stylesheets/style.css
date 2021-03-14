@@ -17,12 +17,26 @@ body {
   justify-content: center; 
 }
 
-.dropdown-toggle::after {
-  display: none;
+.img {
+  display: flex; 
+  flex-wrap: wrap-reverse;
+  flex-direction: column-reverse;
+  justify-content: center; 
 }
 
-.dropdown:hover > .dropdown-menu {
-  display: block;
+
+.button-container {
+  display: flex;
+  margin-top: 5px;
+  justify-content: space-around;
+  color: darkblue;
 }
 
+.btn-primary {
+  background-color: #00008b;
+  width: 48%;
+}
 
+.btn-secondary {
+  width: 48%;
+}
